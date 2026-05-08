@@ -35,6 +35,7 @@ pipeline {
                     sh """
                         echo "Deploying"
                         echo $COURSE
+                        sleep 5
                     """
                 }
             }
