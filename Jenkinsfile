@@ -1,7 +1,4 @@
 pipeline {
-    options { 
-        disableConcurrentBuilds() 
-    }              
     agent {
         node {
             label 'ROBOSHOP'
@@ -10,9 +7,9 @@ pipeline {
     environment { 
         COURSE = 'Jenkins'
     }
-    // options { 
-    //     disableConcurrentBuilds() 
-    // }
+    options { 
+        disableConcurrentBuilds() 
+    }
     stages {
         stage('Build') {
             steps {
