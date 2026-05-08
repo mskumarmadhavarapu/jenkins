@@ -1,20 +1,56 @@
-pipeline {
+// Scripted pipeline
+pipeline {              
     agent any
     stages {
         stage('Build') {
             steps {
-                echo "Building"
+                script {
+                    sh """
+                        echo "Building"
+                    """
+                }
             }
         }
         stage('Test') {
             steps {
-                echo "Testing"
+                script {
+                    sh """
+                        echo "Testing"
+                    """
+                }
             }
         }
         stage('Deploy') {
             steps {
-               echo "Deploying"
+                script {
+                    sh """
+                        echo "Deploying"
+                    """
+                }
             }
         }
     }
 }
+
+// Declarative pipeline
+
+// pipeline {                   
+//     agent any
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo "Building"
+//             }
+//         }
+//         stage('Test') {
+//             steps {
+//                 echo "Testing"
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                echo "Deploying"
+//             }
+//         }
+//     }
+// }
