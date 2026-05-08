@@ -1,3 +1,4 @@
+// Scripted pipeline
 pipeline {              
     agent {
         node {
@@ -33,11 +34,27 @@ pipeline {
             }
         }
     }
-
-    // post build
-    post { 
-        always { 
-            echo 'I will always say Hello again!'
-        }
-    }
 }
+
+// Declarative pipeline
+
+// pipeline {                   
+//     agent any
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo "Building"
+//             }
+//         }
+//         stage('Test') {
+//             steps {
+//                 echo "Testing"
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                echo "Deploying"
+//             }
+//         }
+//     }
+// }
