@@ -8,7 +8,8 @@ pipeline {
         COURSE = 'Jenkins'
     }
     options { 
-        disableConcurrentBuilds() 
+        disableConcurrentBuilds()
+        timeout(time: 5, unit: 'SECONDS') 
     }
     stages {
         stage('Build') {
@@ -35,7 +36,7 @@ pipeline {
                     sh """
                         echo "Deploying"
                         echo $COURSE
-                        sleep 5
+                        sleep 10
                     """
                 }
             }
